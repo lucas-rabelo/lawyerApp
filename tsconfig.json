@@ -15,6 +15,9 @@
       ],
       "@styles/*": [
         "./src/global/styles/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
       ]
     }
   },
