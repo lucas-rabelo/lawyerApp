@@ -1,3 +1,6 @@
+import React from 'react';
+import { Header } from '@components/Layouts/Header';
+
 import {
     Container,
     Title
@@ -6,7 +9,8 @@ import {
 export function Home() {
     return (
         <Container>
-            <Title>Home</Title>
+            <Header />
+            {/* <Menu /> */}
         </Container>
     );
 }

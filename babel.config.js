@@ -3,6 +3,11 @@ module.exports = function (api) {
   return {
     presets: ['babel-preset-expo'],
     plugins: [
+      ['styled-components',
+        {
+          ssr: true
+        }
+      ],
       ['module-resolver',
         {
           'root': ['./src'],
