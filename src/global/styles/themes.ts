@@ -1,11 +1,17 @@
 export const light = {
+    title: 'light',
     colors: {
-        primary: "#FBD553",
-        primary_opacity: "#EABF4E",
-        black: "#19181E",
+        primary: "#19181E",
+        primary_opacity: "#36393F",
         background: "#EBEDF9",
+        text: "#000000",
+
+        black: "#000000",
         white: "#FFFFFF",
-        gray: "#F6F7F8"
+        gray: "#C6C6C6",
+
+        off: "#E51C44",
+        on: "#32BD50"
     },
     fonts: {
         title: "Roboto_700Bold",
@@ -15,13 +21,19 @@ export const light = {
 }
 
 export const dark = {
+    title: 'dark',
     colors: {
         primary: "#FBD553",
         primary_opacity: "#EABF4E",
-        black: "#19181E",
-        background: "",
-        white: "",
-        gray: ""
+        background: "#19181E",
+        text: "#FFFFFF",
+
+        black: "#000000",
+        white: "#FFFFFF",
+        gray: "#C6C6C6",
+
+        off: "#E51C44",
+        on: "#32BD50"
     },
     fonts: {
         title: "Roboto_700Bold",

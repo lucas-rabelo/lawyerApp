@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from '@components/Layouts/Header';
+import { Menu } from '@components/Lists/Menu';
 
 import {
     Container,
@@ -9,8 +10,8 @@ import {
 export function Home() {
     return (
         <Container>
-            <Header />
-            {/* <Menu /> */}
+            <Header type='lawyer' />
+            <Menu />
         </Container>
     );
 }

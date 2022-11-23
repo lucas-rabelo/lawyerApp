@@ -1,6 +1,11 @@
+import { useTheme } from '@hooks/useTheme';
+
+import { light, dark } from '@styles/themes';
+
 import {
     Container,
     LeftArea,
+    ContainerAvatar,
     Avatar,
     GreetingArea,
     Name,
@@ -9,18 +14,32 @@ import {
     Icon
 } from './styles';
 
-export function Header() {
+interface Props {
+    type: 'lawyer' | 'client';
+}
+
+export function Header({ type }: Props) {
+
+    const { theme, handleTheme } = useTheme();
+
+
+    function changeTheme() {
+        theme.title === 'dark' ? handleTheme(light) : handleTheme(dark);
+    }
+
     return (
         <Container>
             <LeftArea>
-                <Avatar source={{ uri: 'https://github.com/lucas-rabelo.png' }} />
+                <ContainerAvatar>
+                    <Avatar source={{ uri: 'https://github.com/lucas-rabelo.png' }} />
+                </ContainerAvatar>
                 <GreetingArea>
-                    <Name>Lucas</Name>
-                    <TypeUser>Advogado</TypeUser>
+                    <Name>{theme.title}</Name>
+                    <TypeUser>{type === 'lawyer' ? 'Advogado' : 'Cliente'}</TypeUser>
                 </GreetingArea>
             </LeftArea>
-            <SignOutButton>
-                <Icon />
+            <SignOutButton onPress={changeTheme}>
+                <Icon color={theme.colors.text} />
             </SignOutButton>
         </Container>
     );

@@ -11,7 +11,6 @@ import { Loading } from "@components/Controllers/Loading";
 
 // hooks
 import { useTheme } from '@hooks/useTheme';
-import light from './src/global/styles/light';
 
 export default function App() {
 
@@ -28,7 +27,7 @@ export default function App() {
   // }
 
   return (
-    <ThemeProvider theme={light}>
+    <ThemeProvider theme={theme}>
       <Home />
     </ThemeProvider>
   );

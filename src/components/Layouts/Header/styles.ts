@@ -17,22 +17,50 @@ export const LeftArea = styled.View`
     align-items: center;
 `;
 
+export const ContainerAvatar = styled.View`
+    align-items: center;
+    justify-content: center;
+
+    width: ${RFValue(55)}px;
+    height: ${RFValue(55)}px;
+
+    background-color: ${({ theme }) => theme.colors.primary};
+    border-radius: ${RFPercentage(50)}px;
+    
+    margin-right: ${RFValue(8)}px;
+`;
+
 export const Avatar = styled.Image.attrs({
     resizeMode: 'contain'
 })`
-    width: ${RFValue(45)}px;
-    height: ${RFValue(45)}px;
+    width: ${RFValue(50)}px;
+    height: ${RFValue(50)}px;
 
     border-radius: ${RFPercentage(50)}px;
-    margin-right: ${RFValue(8)}px;
 `;
 
 export const GreetingArea = styled.View``;
 
-export const Name = styled.Text``;
+export const Name = styled.Text`
+    font-family: ${({ theme }) => theme.fonts.title};
+    font-size: ${RFValue(14)}px;
+    color: ${({ theme }) => theme.colors.text};
+`;
 
-export const TypeUser = styled.Text``;
+export const TypeUser = styled.Text`
+    font-family: ${({ theme }) => theme.fonts.complement};
+    font-size: ${RFValue(12)}px;
+    color: ${({ theme }) => theme.colors.text};
+`;
 
-export const SignOutButton = styled.TouchableOpacity``;
+export const SignOutButton = styled.TouchableOpacity`
+    width: ${RFValue(30)}px;
+    height: ${RFValue(50)}px;
 
-export const Icon = styled(SignOut)``;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const Icon = styled(SignOut).attrs({
+    size: RFValue(24)
+})``;
