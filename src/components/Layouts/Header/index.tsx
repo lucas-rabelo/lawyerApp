@@ -13,10 +13,10 @@ export function Header() {
     return (
         <Container>
             <LeftArea>
-                <Avatar />
+                <Avatar source={{ uri: 'https://github.com/lucas-rabelo.png' }} />
                 <GreetingArea>
                     <Name>Lucas</Name>
-                    {/* { <TypeUser>Advogado</TypeUser> } */}
+                    <TypeUser>Advogado</TypeUser>
                 </GreetingArea>
             </LeftArea>
             <SignOutButton>

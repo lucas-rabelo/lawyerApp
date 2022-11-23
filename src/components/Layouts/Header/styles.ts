@@ -1,11 +1,31 @@
 import styled from 'styled-components/native';
 import { SignOut } from 'phosphor-react-native';
+import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 
-export const Container = styled.View``;
+export const Container = styled.View`
+    width: 100%;
+    flex-direction: row;
 
-export const LeftArea = styled.View``;
+    justify-content: space-between;
+    align-items: center;
+`;
 
-export const Avatar = styled.Image``;
+export const LeftArea = styled.View`
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const Avatar = styled.Image.attrs({
+    resizeMode: 'contain'
+})`
+    width: ${RFValue(45)}px;
+    height: ${RFValue(45)}px;
+
+    border-radius: ${RFPercentage(50)}px;
+    margin-right: ${RFValue(8)}px;
+`;
 
 export const GreetingArea = styled.View``;
 
