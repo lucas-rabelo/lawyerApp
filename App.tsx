@@ -11,7 +11,7 @@ import { Loading } from "@components/Controllers/Loading";
 
 // hooks
 import { useTheme } from '@hooks/useTheme';
-import { light } from '@styles/themes';
+import light from './src/global/styles/light';
 
 export default function App() {
 
@@ -23,9 +23,9 @@ export default function App() {
     Roboto_700Bold
   })
 
-  if (!fontsLoaded) {
-    return <Loading />
-  }
+  // if (!fontsLoaded) {
+  //   return <Loading />
+  // }
 
   return (
     <ThemeProvider theme={light}>
