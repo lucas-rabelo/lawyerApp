@@ -1,16 +1,19 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'react-native';
 import { useFonts, Roboto_300Light, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { ThemeProvider } from 'styled-components/native';
 
 // pages
 import { Home } from "@pages/Home";
+import { FindLawyer } from '@pages/FindLawyer';
+import { AskLawyer } from '@pages/AskLawyer';
 
 // components
 import { Loading } from "@components/Controllers/Loading";
 
 // hooks
 import { useTheme } from '@hooks/useTheme';
+import { LawyerDetails } from '@pages/LawyerDetails';
 
 export default function App() {
 
@@ -28,7 +31,11 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      { !fontsLoaded ? <Loading /> : <Home /> }
+      <StatusBar
+        barStyle="light-content"
+        translucent
+      />
+      { !fontsLoaded ? <Loading /> : <LawyerDetails /> }
       {/* <Home /> */}
     </ThemeProvider>
   );

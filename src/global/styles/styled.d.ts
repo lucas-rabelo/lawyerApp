@@ -8,6 +8,7 @@ declare module "styled-components" {
             primary: string;
             primary_opacity: string;
             background: string;
+            background_page: string;
             text: string,
 
             black: string;

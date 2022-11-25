@@ -4,6 +4,7 @@ export const light = {
         primary: "#19181E",
         primary_opacity: "#36393F",
         background: "#EBEDF9",
+        background_page: "#EBEDF9",
         text: "#000000",
 
         black: "#000000",
@@ -26,6 +27,7 @@ export const dark = {
         primary: "#FBD553",
         primary_opacity: "#EABF4E",
         background: "#19181E",
+        background_page: "#EBEDF9",
         text: "#FFFFFF",
 
         black: "#000000",

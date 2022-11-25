@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { MenuProps } from '@components/Lists/Menu';
 
 import {
@@ -6,20 +7,32 @@ import {
     Label
 } from './styles';
 
-import AuctionPng from '@assets/auction.png';
-
 interface Props {
     data: MenuProps;
 }
 
 export function MenuItem({ data }: Props) {
 
-    const { label, icon } = data;
+    const { id, label, icon } = data;
+    const [selected, setSelected] = useState<boolean>(false);
+
+    function handleOpenPage(idPage: string) {
+        // alert(idPage);
+    }
+
+    function handleOnFocus() {
+        setSelected(!selected)
+    }
 
     return (
-        <Container>
-            <Icon source={icon} />
-            <Label>{label}</Label>
+        <Container
+            onPress={() => handleOpenPage(id)}
+            onPressIn={handleOnFocus}
+            onPressOut={handleOnFocus}
+            selected={selected}
+        >
+            <Icon selected={selected} source={icon} />
+            <Label selected={selected} >{label}</Label>
         </Container>
     );
 }
