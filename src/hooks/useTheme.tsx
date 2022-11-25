@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme } from "styled-components/native";
 
 import { light, dark } from "@styles/themes";
 

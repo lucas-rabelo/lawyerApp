@@ -1,17 +1,22 @@
-import React from 'react';
-import { Header } from '@components/Layouts/Header';
 import { Menu } from '@components/Lists/Menu';
+
+import BackgroundPng from '@assets/background.png';
 
 import {
     Container,
-    Title
+    ContainerImage,
+    Title,
+    Subtitle
 } from './styles';
 
 export function Home() {
     return (
-        <Container>
-            <Header type='lawyer' />
-            <Menu />
-        </Container>
+        <ContainerImage source={BackgroundPng}>
+            <Container>
+                <Title>Your law service</Title>
+                <Subtitle>Choose one option for continue</Subtitle>
+                <Menu />
+            </Container>
+        </ContainerImage>
     );
 }

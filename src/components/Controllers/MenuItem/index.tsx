@@ -8,11 +8,18 @@ import {
 
 import AuctionPng from '@assets/auction.png';
 
-export function MenuItem() {
+interface Props {
+    data: MenuProps;
+}
+
+export function MenuItem({ data }: Props) {
+
+    const { label, icon } = data;
+
     return (
         <Container>
-            <Icon source={AuctionPng} />
-            <Label>Pergunte a um advogado</Label>
+            <Icon source={icon} />
+            <Label>{label}</Label>
         </Container>
     );
 }
