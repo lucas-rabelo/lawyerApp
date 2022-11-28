@@ -14,6 +14,7 @@ import { Loading } from "@components/Controllers/Loading";
 // hooks
 import { useTheme } from '@hooks/useTheme';
 import { LawyerDetails } from '@pages/LawyerDetails';
+import { AuthProvider } from '@hooks/useAuth';
 
 export default function App() {
 
@@ -30,13 +31,14 @@ export default function App() {
   // }
 
   return (
-    <ThemeProvider theme={theme}>
-      <StatusBar
-        barStyle="light-content"
-        translucent
-      />
-      { !fontsLoaded ? <Loading /> : <LawyerDetails /> }
-      {/* <Home /> */}
-    </ThemeProvider>
+    <>
+        <StatusBar
+            barStyle="light-content"
+            translucent
+        />
+        <AuthProvider>
+            { !fontsLoaded ? <Loading /> : <LawyerDetails /> }
+        </AuthProvider>
+    </>
   );
 }

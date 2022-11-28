@@ -23,9 +23,12 @@ export const Header = styled.View`
 
 export const Title = styled.Text.attrs({
     // numberOfLines: 1
-})`
+})<Props>`
     font-family: ${({ theme }) => theme.fonts.title};
     font-size: ${RFValue(14)}px;
+    
+    color: ${({ theme, selected }) =>
+        selected ? theme.colors.white : theme.colors.text};
 `;
 
 export const TagId = styled.Text`
@@ -57,17 +60,19 @@ export const Footer = styled.View`
     justify-content: space-between;
 `;
 
-export const CreatedBy = styled.Text`
+export const CreatedBy = styled.Text<Props>`
     font-family: ${({ theme }) => theme.fonts.complement};
     font-size: ${RFValue(12)}px;
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme, selected }) => 
+        selected ? theme.colors.white : theme.colors.text};
     opacity: .55;
 `;
 
-export const CreatedIn = styled.Text`
+export const CreatedIn = styled.Text<Props>`
     font-family: ${({ theme }) => theme.fonts.complement};
     font-size: ${RFValue(12)}px;
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme, selected }) => 
+        selected ? theme.colors.white : theme.colors.text};
     opacity: .55;
 `;
 
@@ -79,6 +84,7 @@ export const CreatedByArea = styled.View`
 export const IconUser = styled(User)`
     margin-right: ${RFValue(5)}px;
     opacity: .55;
+
 `;
 
 export const CreatedInArea = styled.View`

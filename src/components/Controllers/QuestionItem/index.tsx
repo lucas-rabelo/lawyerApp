@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import { QuestionProps } from '@components/Lists/Questions';
 
+import { useAuth } from '@hooks/useAuth';
+
 import {
     Container,
     Header,
@@ -26,6 +28,8 @@ export function QuestionItem({ data }: Props) {
     const { id, title, tag_id, created_by, created_in } = data;
     const [selected, setSelected] = useState<boolean>(false);
 
+    const { theme } = useAuth();
+
     function handleOnFocus() {
         setSelected(!selected)
     }
@@ -36,19 +40,19 @@ export function QuestionItem({ data }: Props) {
             onPressIn={handleOnFocus}
             onPressOut={handleOnFocus}
         >
-            <Title>{title}</Title>
+            <Title selected={selected}>{title}</Title>
             <Header>
                 <TagId>{tag_id}</TagId>
             </Header>
             <Divider />
             <Footer>
                 <CreatedByArea>
-                    <IconUser />
-                    <CreatedBy>{created_by}</CreatedBy>
+                    <IconUser color={selected ? theme.colors.white : theme.colors.text}/>
+                    <CreatedBy selected={selected}>{created_by}</CreatedBy>
                 </CreatedByArea>
                 <CreatedInArea>
-                    <IconDate />
-                    <CreatedIn>{created_in}</CreatedIn>
+                    <IconDate color={selected ? theme.colors.white : theme.colors.text}/>
+                    <CreatedIn selected={selected}>{created_in}</CreatedIn>
                 </CreatedInArea>
             </Footer>
         </Container>

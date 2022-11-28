@@ -45,9 +45,12 @@ export const Avatar = styled.Image.attrs({
 
 export const InformationsLawyer = styled.View``;
 
-export const Name = styled.Text`
+export const Name = styled.Text<Props>`
     font-family: ${({ theme }) => theme.fonts.title};
     font-size: ${RFValue(13)}px;
+
+    color: ${({ theme, selected }) => 
+        selected ? theme.colors.white : theme.colors.text};
 `;
 
 export const Type = styled.Text<Props>`
@@ -55,7 +58,8 @@ export const Type = styled.Text<Props>`
 
     font-family: ${({ theme }) => theme.fonts.complement};
     font-size: ${RFValue(12)}px;
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme, selected }) => 
+        selected ? theme.colors.white : theme.colors.text};
     opacity: ${({ selected }) => 
         selected ? 1 : .5 };
 `;

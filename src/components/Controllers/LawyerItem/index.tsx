@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { useAuth } from '@hooks/useAuth';
+
 import {
     Container,
     ContainerAvatar,
@@ -27,6 +29,8 @@ export function LawyerItem({ data }: Props) {
     const { id, name, type, avatar } = data;
     const [selected, setSelected] = useState(false);
 
+    const { theme } = useAuth();
+
     function handleOnFocus() {
         setSelected(!selected)
     }
@@ -44,11 +48,11 @@ export function LawyerItem({ data }: Props) {
                     <Avatar source={{ uri: avatar }} />
                 </ContainerAvatar>
                 <InformationsLawyer>
-                    <Name>{name}</Name>
+                    <Name selected={selected}>{name}</Name>
                     <Type selected={selected}>{type}</Type>
                 </InformationsLawyer>
             </LawyerContainer>
-            <Icon selected={selected} />
+            <Icon color={selected ? theme.colors.white : theme.colors.text} selected={selected} />
         </Container>
     );
 }

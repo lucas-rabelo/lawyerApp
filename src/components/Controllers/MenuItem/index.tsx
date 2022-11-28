@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { MenuProps } from '@components/Lists/Menu';
 
+import { light, dark } from '@styles/themes';
+
 import {
     Container,
     Icon,
     Label
 } from './styles';
+import { useAuth } from '@hooks/useAuth';
 
 interface Props {
     data: MenuProps;

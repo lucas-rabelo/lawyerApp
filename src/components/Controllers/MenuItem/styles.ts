@@ -43,5 +43,6 @@ export const Label = styled.Text<Props>`
     font-size: ${RFValue(15)}px;
     font-family: ${({ theme }) => theme.fonts.text};
 
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme, selected }) => 
+        selected ? theme.colors.white : theme.colors.text};
 `;

@@ -11,6 +11,15 @@ export const Container = styled.View`
     margin-top: ${RFValue(10)}px;
 `;
 
+export const Divider = styled.View`
+    width: 100%;
+    height: ${RFValue(1)}px;
+
+    background-color: ${({ theme }) => theme.colors.gray};
+    margin-top: ${RFValue(20)}px;
+    margin-bottom: ${RFValue(20)}px;
+`;
+
 export const Header = styled.View`
     flex-direction: row;
     align-items: center;
@@ -43,8 +52,6 @@ export const Type = styled.Text`
 `;
 
 export const Main = styled.View`
-    margin-top: ${RFValue(20)}px;
-    margin-bottom: ${RFValue(24)}px;
 `;
 
 export const HeaderMain = styled.View`

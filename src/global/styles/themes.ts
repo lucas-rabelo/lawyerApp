@@ -27,7 +27,7 @@ export const dark = {
         primary: "#FBD553",
         primary_opacity: "#EABF4E",
         background: "#19181E",
-        background_page: "#EBEDF9",
+        background_page: "#19181E",
         text: "#FFFFFF",
 
         black: "#000000",
