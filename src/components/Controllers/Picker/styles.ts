@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
-import { ArrowDown, ArrowUp } from 'phosphor-react-native';
+import { CaretUp, CaretDown } from 'phosphor-react-native';
 import { RFValue, RFPercentage } from 'react-native-responsive-fontsize';
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
     width: 100%;
     flex-direction: row;
     align-items: center;
@@ -22,10 +22,10 @@ export const Label = styled.Text`
     text-transform: uppercase;
 `;
 
-export const IconUp = styled(ArrowUp).attrs({
+export const IconUp = styled(CaretUp).attrs({
     size: RFValue(22)
 })``;
 
-export const IconDown = styled(ArrowDown).attrs({
+export const IconDown = styled(CaretDown).attrs({
     size: RFValue(22)
 })``;

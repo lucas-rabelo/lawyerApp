@@ -14,17 +14,20 @@ interface Props extends TouchableOpacityProps {
     title: string;
 }
 
-export function Picker({ statesModal = false, title }: Props) {
+export function Picker({ statesModal = false, title, ...rest }: Props) {
 
     const { theme } = useAuth()
 
-    return(
-        <Container>
-            <Label>{ title }</Label>
+    return (
+        <Container
+            activeOpacity={.8}
+            {...rest}
+        >
+            <Label>{title}</Label>
             {
-                statesModal ? 
-                ( <IconUp color={theme.colors.gray} /> ) : 
-                ( <IconDown color={theme.colors.gray} /> )
+                statesModal ?
+                    (<IconUp color={theme.colors.gray} />) :
+                    (<IconDown color={theme.colors.gray} />)
             }
         </Container>
     );

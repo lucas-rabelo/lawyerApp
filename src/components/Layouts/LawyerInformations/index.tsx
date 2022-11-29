@@ -6,7 +6,7 @@ import { Button } from '@components/Controllers/Button';
 import {
     Container,
     Divider,
-    Header, 
+    Header,
     LeftArea,
     Avatar,
     RightArea,
@@ -36,11 +36,11 @@ export function LawyerInformations() {
     }
 
     function handleCreateAppointment() {
-        alert('handleCreateAppointment');
+        // alert('handleCreateAppointment');
         setShowButtons(false);
     }
 
-    return(
+    return (
         <>
             <Container>
                 <Header>
