@@ -1,9 +1,11 @@
+import { FlatList, FlatListProps } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
-  
-`;
+import { HoursProps } from '.';
 
-export const Title = styled.Text`
+export const Container = styled(
+    FlatList as new (props: FlatListProps<HoursProps>) => FlatList<HoursProps>
+)`
   
 `;

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { Modal } from '@components/Layouts/Modal';
 import { HoursList } from '@components/Lists/HoursList';
 import { Picker } from '@components/Controllers/Picker';
+import { DateSelected } from '@components/Lists/DateSelected';
 
 import {
     Container,
@@ -11,7 +11,7 @@ import {
 
 export function AppointmentForm() {
 
-    const [serviceSelected, setServiceSelected] = useState<string | null>(null);
+    const [serviceSelected, setServiceSelected] = useState<string | null>('criminalista');
     const [openModal, setOpenModal] = useState<boolean>(false);
 
     function handleOpenModal() {
@@ -23,15 +23,17 @@ export function AppointmentForm() {
         <>
             <Container>
                 <Title>Select service</Title>
-                <Picker title="type service" onPress={handleOpenModal} statesModal={openModal} />
-                {serviceSelected && (
-                    <HoursList />
-                )
+                <Picker title={serviceSelected ? serviceSelected : "type service"} onPress={handleOpenModal} statesModal={openModal} />
+                {
+                    serviceSelected && (
+                        <>
+                            <Title>Date & Time</Title>
+                            <DateSelected />
+                            <HoursList />
+                        </>
+                    )
                 }
             </Container>
-            <Modal>
-
-            </Modal>
         </>
     )
 }
